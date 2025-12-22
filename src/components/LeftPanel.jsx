@@ -1,4 +1,4 @@
-import TotalCard from "./TotalCard"
+import TotalCard from "./totalCard"
 import CalculatorModal from "./CalculadoraModal"
 
 export default function LeftPanel({
