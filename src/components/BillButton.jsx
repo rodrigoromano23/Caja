@@ -34,30 +34,31 @@ export default function BillButton({ value, onClick }) {
     <button
       onClick={() => onClick(value)}
       className="
-        relative group w-full
+        relative w-full
+        h-24 sm:h-28
         rounded-xl
-        shadow-lg
         overflow-hidden
-        transition-transform hover:scale-105
+        shadow-lg
+        transition-transform active:scale-95 hover:scale-105
+        bg-no-repeat bg-center
       "
+      style={{
+        backgroundImage: `url(${billImages[value]})`,
+        backgroundSize: "contain"
+      }}
     >
-      <img
-        src={billImages[value]}
-        alt={`Billete ${value}`}
-        className="w-full h-full object-cover"
-      />
-
-      {/* Overlay hover */}
+      {/* Overlay */}
       <div
         className="
           absolute inset-0
-          bg-black/60
+          bg-black/50
           flex items-center justify-center
-          opacity-0 group-hover:opacity-100
+          opacity-100 sm:opacity-0 sm:hover:opacity-100
           transition
+          pointer-events-none
         "
       >
-        <span className="text-white text-xl sm:text-2xl font-bold">
+        <span className="text-white text-lg sm:text-2xl font-bold">
           $ {value}
         </span>
       </div>
